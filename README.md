@@ -80,6 +80,21 @@ You ask a question
 
 Oracle is **read-only** — it never edits your files. It only suggests; you decide what to apply.
 
+## Backend Configuration
+
+Oracle uses [Codex CLI](https://github.com/openai/codex) by default, but you can swap the backend by editing the `codex exec` command in the agent/skill files.
+
+| Backend | Command | Notes |
+|---------|---------|-------|
+| **Codex CLI** (default) | `codex exec "prompt"` | Requires OpenAI API key |
+| **Ollama** | `ollama run llama3 "prompt"` | Local, free, no API key |
+| **OpenRouter** | `curl` to OpenRouter API | Multi-model access, pay-per-use |
+| **Google Gemini** | `gemini "prompt"` | Requires Google AI API key |
+
+To switch backends, replace the `codex exec` pattern in:
+- `agents/oracle.md` — the "How to Call Codex" section
+- `skills/ask-oracle/SKILL.md` — the "Construct and Send Codex Prompt" step
+
 ## Uninstall
 
 ```bash

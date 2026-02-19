@@ -80,6 +80,21 @@ Codex 응답을
 
 Oracle은 **읽기 전용**입니다 — 파일을 수정하지 않습니다. 제안만 하고, 적용은 사용자가 결정합니다.
 
+## 백엔드 설정
+
+기본값은 [Codex CLI](https://github.com/openai/codex)이지만, 에이전트/스킬 파일의 `codex exec` 명령을 수정하여 다른 백엔드로 교체할 수 있습니다.
+
+| 백엔드 | 명령어 | 비고 |
+|--------|--------|------|
+| **Codex CLI** (기본) | `codex exec "prompt"` | OpenAI API 키 필요 |
+| **Ollama** | `ollama run llama3 "prompt"` | 로컬 실행, 무료, API 키 불필요 |
+| **OpenRouter** | `curl`로 OpenRouter API 호출 | 다중 모델 접근, 종량제 |
+| **Google Gemini** | `gemini "prompt"` | Google AI API 키 필요 |
+
+백엔드를 변경하려면 아래 파일의 `codex exec` 패턴을 교체하세요:
+- `agents/oracle.md` — "How to Call Codex" 섹션
+- `skills/ask-oracle/SKILL.md` — "Construct and Send Codex Prompt" 단계
+
 ## 제거
 
 ```bash
