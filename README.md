@@ -2,6 +2,8 @@
 
 Cross-model verification for [Claude Code](https://claude.com/claude-code). Bridges Claude with [Codex (GPT-5.3)](https://github.com/openai/codex) to get second opinions on code reviews, alternative implementations, and architectural decisions.
 
+[한국어](README.ko.md)
+
 ## Why?
 
 Different AI models have different strengths and blind spots. By asking a second model to review your code, you catch issues that a single model might miss. Oracle automates this cross-verification workflow.
